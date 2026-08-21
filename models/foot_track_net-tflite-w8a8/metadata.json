@@ -1,0 +1,92 @@
+{
+    "model_id": "foot_track_net",
+    "model_name": "Person-Foot-Detection",
+    "runtime": "tflite",
+    "precision": "w8a8",
+    "tool_versions": {
+        "qairt": "2.45.0.260326154327",
+        "litert": "1.4.4"
+    },
+    "model_files": {
+        "foot_track_net.tflite": {
+            "inputs": {
+                "image": {
+                    "shape": [
+                        1,
+                        480,
+                        640,
+                        3
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.003921568859368563,
+                        "zero_point": 0
+                    },
+                    "io_type": "image",
+                    "image_metadata": {},
+                    "value_range": [
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "outputs": {
+                "heatmap": {
+                    "shape": [
+                        1,
+                        120,
+                        160,
+                        3
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.00390625,
+                        "zero_point": 0
+                    }
+                },
+                "bbox": {
+                    "shape": [
+                        1,
+                        120,
+                        160,
+                        12
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.3492450714111328,
+                        "zero_point": 81
+                    }
+                },
+                "landmark": {
+                    "shape": [
+                        1,
+                        120,
+                        160,
+                        34
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 2.1704514026641846,
+                        "zero_point": 114
+                    }
+                },
+                "landmark_visibility": {
+                    "shape": [
+                        1,
+                        120,
+                        160,
+                        17
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.00390625,
+                        "zero_point": 0
+                    }
+                }
+            }
+        }
+    },
+    "supplementary_files": {
+        "labels.txt": "Mapping of model prediction indices -> string labels."
+    }
+}

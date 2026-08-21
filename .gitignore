@@ -1,0 +1,6 @@
+# results/ is intentionally NOT ignored - benchmark output is plain-text data
+# (exception: gstreamer/results/, which holds generated mp4)
+__pycache__/
+.venv/
+venv/
+build/

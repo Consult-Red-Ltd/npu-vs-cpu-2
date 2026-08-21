@@ -1,0 +1,70 @@
+{
+    "model_id": "gear_guard_net",
+    "model_name": "PPE-Detection",
+    "runtime": "tflite",
+    "precision": "w8a8",
+    "tool_versions": {
+        "qairt": "2.45.0.260326154327",
+        "litert": "1.4.4"
+    },
+    "model_files": {
+        "gear_guard_net.tflite": {
+            "inputs": {
+                "image": {
+                    "shape": [
+                        1,
+                        320,
+                        192,
+                        3
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.003921568859368563,
+                        "zero_point": 0
+                    },
+                    "io_type": "image",
+                    "image_metadata": {},
+                    "value_range": [
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "outputs": {
+                "boxes": {
+                    "shape": [
+                        1,
+                        3780,
+                        4
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 1.5097410678863525,
+                        "zero_point": 27
+                    }
+                },
+                "scores": {
+                    "shape": [
+                        1,
+                        3780
+                    ],
+                    "dtype": "uint8",
+                    "quantization_parameters": {
+                        "scale": 0.003834740025922656,
+                        "zero_point": 0
+                    }
+                },
+                "class_idx": {
+                    "shape": [
+                        1,
+                        3780
+                    ],
+                    "dtype": "uint8"
+                }
+            }
+        }
+    },
+    "supplementary_files": {
+        "labels.txt": "Mapping of model prediction indices -> string labels."
+    }
+}

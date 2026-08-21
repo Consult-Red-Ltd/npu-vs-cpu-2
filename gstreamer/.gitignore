@@ -1,0 +1,3 @@
+# results/ holds generated mp4 + logs (large/binary) - not tracked
+results/
+module/*.so
